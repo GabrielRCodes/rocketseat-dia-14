@@ -1,0 +1,342 @@
+/* LEMBRAR: Personalizar esse projeto, deixar ele dark e com gradient colors. */
+/* . = CLASS || # = ID */
+
+:root {
+  /* Referenciando o documento HTML */
+  --dark-blue: #363f5f; /* Variável de cor */
+  --gradient-gray: linear-gradient(315deg, #485461 0%, #28313b 74%);
+  --gradient-green-btn: linear-gradient(
+    to bottom right,
+    #2d4a22,
+    #2eb62c,
+    #2eb62c,
+    #2eb62c,
+    #2d4a22
+  );
+}
+
+* {
+  margin: 0; /* Margem da caixa, distanciando entre espaçamento externo */
+  padding: 0; /* Margem do conteúdo dentro da caixa */
+  box-sizing: border-box; /* Recomendado = border-box || Default: content-box */
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  background: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: min(90vw);
+  margin: auto;
+}
+
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark-blue);
+  font-weight: normal;
+}
+
+a {
+  color: #49aa26;
+  text-decoration: none;
+}
+
+/* Somando classes ou IDS, para isso, basta colocar os nomes sem espaços, requirindo que ele tenha as duas classes, nesse caso e não a classe dentro da outra. */
+/* 
+
+BLOCK: PEGA TODA A LINHA
+INLINE: PEGA A CAIXA DO ELEMENTO
+INLINE-BLOCK: A SOMA DOS DOIS
+
+*/
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+a:hover {
+  color: #3dd705;
+  text-decoration: none;
+}
+
+header {
+  background: var(--gradient-gray);
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+
+#logo {
+  color: #ffffff;
+  font-weight: 100;
+}
+
+#balance {
+  margin-top: -8rem;
+}
+
+#balance h2 {
+  color: #ffffff;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+}
+
+.card h3 {
+  font-weight: normal;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+.card.total {
+  background: var(--gradient-green-btn);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.card.total h3 {
+  text-transform: uppercase;
+}
+
+#transaction {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+#transaction h2 {
+  font-weight: bold;
+}
+
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: #969cb3;
+}
+
+table thead tr th:first-child {
+  border-radius: 1rem 0 0 1rem;
+}
+
+table thead tr th:last-child {
+  border-radius: 0 1rem 1rem 0;
+}
+
+table thread tr td:first-child,
+table tbody tr td:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+table thread tr td:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+table th {
+  background: #ffffff;
+  color: var(--dark-blue);
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+
+table tbody tr:hover {
+  opacity: 1;
+  color: var(--dark-blue);
+}
+
+table tbody td {
+  background: #ffffff;
+  padding: 1rem 2rem;
+}
+
+td.income p {
+  color: #12a454;
+  opacity: 0.7;
+}
+
+td.expense p {
+  color: #e92929;
+  opacity: 0.7;
+}
+
+td.income:hover p {
+  opacity: 1;
+}
+
+td.expense:hover p {
+  opacity: 1;
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+  border-radius: 1rem;
+  z-index: 1;
+  /*width: 90%;
+  max-width: 500px; */
+}
+
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+#form form input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small {
+  color: #000000;
+  opacity: 0.4;
+}
+
+#date {
+  margin-bottom: 15px;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
+.input-group.actions {
+  justify-content: center;
+}
+
+button {
+  width: 50%;
+  height: 50px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  background: var(--gradient-green-btn);
+  padding: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.button.cancel {
+  width: 50%;
+  color: #e92929;
+  border: 2px #e92929 solid;
+  border-radius: 0.5rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+footer a {
+  color: var(--dark-blue);
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+footer a:hover {
+  color: #969cb3;
+  opacity: 1;
+}
+
+/* at rules */
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%; /* 18,28? */
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
